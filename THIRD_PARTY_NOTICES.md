@@ -11,3 +11,15 @@
 ## reed-solomon (incluido en ggwave)
 - Copyright (c) 2015 Mike Lubinets — Licencia MIT
   (texto completo: `app/src/main/cpp/ggwave/reed-solomon/LICENSE`)
+
+## Textos de entrenamiento del compresor (app/src/main/assets/compresion/v1/)
+- Project Gutenberg, dominio público: *Niebla* (Miguel de Unamuno, eBook #49836),
+  *Marianela* (Benito Pérez Galdós, #17340), *Los cuatro jinetes del Apocalipsis*
+  (Vicente Blasco Ibáñez, #24536). Se ha quitado la cabecera/licencia de Gutenberg y se usa
+  solo el texto de las obras (dominio público).
+- `es_chat.txt`, `urls.txt` y `diccionario_conversacional.txt`: escritos/derivados para este
+  proyecto (misma licencia que el proyecto).
+
+## Imágenes de prueba (solo tests, no van en el APK)
+- `app/src/test/resources/muestras/`: dos fotos de Unsplash (licencia Unsplash) vía
+  picsum.photos y un gráfico generado para el proyecto. Detalle en `LEEME.md` de esa carpeta.

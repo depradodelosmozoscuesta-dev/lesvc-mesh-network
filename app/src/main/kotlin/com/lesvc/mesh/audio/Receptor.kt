@@ -7,13 +7,21 @@ import android.media.AudioManager
 import android.media.AudioRecord
 import android.media.MediaRecorder
 import android.os.Build
+import com.lesvc.mesh.archivo.ProtocoloArchivo
+import com.lesvc.mesh.archivo.ReceptorArchivos
+import com.lesvc.mesh.texto.CodecMensaje
+import com.lesvc.mesh.texto.CompresorTexto
 import kotlin.math.sqrt
 
 /**
  * Escucha el micrófono de forma continua (mono) y entrega a ggwave cada bloque.
  * Los callbacks se llaman desde el hilo de captura.
  */
-class Receptor(private val context: Context, private val oyente: Oyente) {
+class Receptor(
+    private val context: Context,
+    private val oyente: Oyente,
+    private val compresor: () -> CompresorTexto? = { null },
+) {
 
     interface Oyente {
         fun mensaje(texto: String, partes: Int)
@@ -21,7 +29,12 @@ class Receptor(private val context: Context, private val oyente: Oyente) {
         fun fallo()
         fun nivel(nivel0a1: Float)
         fun error(texto: String)
+        /** Tramas de imagen/fichero (cabecera 0x1F): progreso, completado, CRC, peticiones de reenvío. */
+        fun archivo(evento: ReceptorArchivos.Evento) {}
     }
+
+    /** Estado de las transferencias de ficheros (solo desde el hilo de captura o tras detener). */
+    val archivos = ReceptorArchivos()
 
     /** Si es true, se descarta el audio captado (p. ej. mientras este móvil emite). */
     @Volatile var silenciado = false
@@ -104,8 +117,11 @@ class Receptor(private val context: Context, private val oyente: Oyente) {
                 if (nb == 0) continue
                 for (r in ggwave.alimentar(bloque, nb)) when (r) {
                     is GGWave.Decodificado.Fallido -> oyente.fallo()
-                    is GGWave.Decodificado.Datos -> when (val m = reens.recibir(r.bytes)) {
-                        is Reensamblador.Resultado.Completo -> oyente.mensaje(m.texto, m.partes)
+                    is GGWave.Decodificado.Datos -> if (ProtocoloArchivo.esTramaArchivo(r.bytes)) {
+                        val ev = archivos.recibir(r.bytes)
+                        if (ev === ReceptorArchivos.Evento.Ignorada) Unit else oyente.archivo(ev)
+                    } else when (val m = reens.recibir(r.bytes)) {
+                        is Reensamblador.Resultado.Completo -> oyente.mensaje(CodecMensaje.leer(m.datos, compresor), m.partes)
                         is Reensamblador.Resultado.Parcial -> oyente.parcial(m.recibidas, m.total)
                         Reensamblador.Resultado.Invalido -> oyente.fallo()
                     }

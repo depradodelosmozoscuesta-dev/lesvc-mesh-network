@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- Solo la foto temporal de la cámara -->
+    <cache-path name="camara" path="camara/" />
+</paths>

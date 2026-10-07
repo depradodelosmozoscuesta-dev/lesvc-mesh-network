@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">LESVC Mesh Audio</string>
-    <string name="subtitulo">Envía y recibe mensajes de texto por sonido, sin internet ni cobertura. Funciona con ñ, tildes y ¿¡.</string>
+    <string name="subtitulo">Envía y recibe mensajes e imágenes por sonido, sin internet ni cobertura. Funciona con ñ, tildes y ¿¡.</string>
     <string name="hint_mensaje">Escribe tu mensaje…</string>
     <string name="modo">Modo de transmisión</string>
     <string name="aviso_ultra">Experimental: usa frecuencias de 15–19,5 kHz. Muchos móviles no las emiten o no las captan bien; el alcance suele ser de pocos centímetros a 1–2 metros.</string>
@@ -16,4 +16,21 @@
     <string name="sin_mensajes">Aún no hay mensajes. Pulsa «Empezar a escuchar» y acerca el otro móvil.</string>
     <string name="acerca_de">Acerca de y licencias</string>
     <string name="permiso_denegado">Sin permiso de micrófono no se puede escuchar. Puedes darlo en Ajustes › Aplicaciones › LESVC Mesh Audio › Permisos.</string>
+    <string name="enviar_imagen">🖼  Enviar imagen</string>
+    <string name="compatible">Modo compatible (sin compresión, para Waver y otras apps ggwave)</string>
+    <string name="titulo_enviar_imagen">Enviar imagen</string>
+    <string name="img_explicacion">Por sonido caben muy pocos bytes (≈23 bytes/s en «muy rápido»), así que la imagen se reduce mucho. Abajo verás exactamente cómo llegará antes de enviarla.</string>
+    <string name="img_galeria">Elegir de la galería</string>
+    <string name="img_camara">Hacer una foto</string>
+    <string name="img_tipo">Tipo de imagen</string>
+    <string name="img_foto">Foto</string>
+    <string name="img_grafico">Gráfico / dibujo</string>
+    <string name="img_tiempo">Tiempo máximo de envío</string>
+    <string name="img_gris">Blanco y negro (más detalle en el mismo tiempo)</string>
+    <string name="img_repetir">Repetir cada parte (el doble de lento, aguanta cortes)</string>
+    <string name="img_asi_llegara">Así llegará al otro móvil</string>
+    <string name="img_enviar">▶  Enviar esta imagen</string>
+    <string name="pedir_faltan">Pedir las que faltan (por sonido)</string>
+    <string name="reenviar_faltan">Reenviar partes que faltan</string>
+    <string name="hint_reenviar">Partes que faltan, p. ej. 3, 6-8</string>
 </resources>

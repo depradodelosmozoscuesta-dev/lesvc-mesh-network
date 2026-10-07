@@ -47,6 +47,14 @@
                 android:textColor="@color/texto_suave"
                 android:textSize="13sp" />
 
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/compatible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/compatible"
+                android:textSize="14sp" />
+
             <TextView style="@style/Etiqueta" android:text="@string/modo" />
 
             <Spinner
@@ -79,6 +87,50 @@
                 android:layout_marginTop="10dp"
                 android:backgroundTint="@color/enviar"
                 android:text="@string/enviar" />
+
+            <Button
+                android:id="@+id/botonImagen"
+                style="@style/BotonGrande"
+                android:layout_height="56dp"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/acento"
+                android:text="@string/enviar_imagen" />
+        </LinearLayout>
+
+        <!-- REENVÍO (emisor de una imagen) -->
+        <LinearLayout
+            android:id="@+id/tarjetaReenvio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/tarjeta"
+            android:orientation="vertical"
+            android:padding="14dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tituloReenvio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/texto"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/listaReenvio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_reenviar"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minHeight="48dp" />
+
+            <Button
+                android:id="@+id/botonReenviar"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="@string/reenviar_faltan"
+                android:textAllCaps="false" />
         </LinearLayout>
 
         <!-- ESCUCHAR -->
@@ -121,6 +173,50 @@
                 android:textSize="14sp" />
         </LinearLayout>
 
+        <!-- RECEPCIÓN DE IMAGEN -->
+        <LinearLayout
+            android:id="@+id/tarjetaTransferencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/tarjeta"
+            android:orientation="vertical"
+            android:padding="14dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tituloTransferencia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/texto"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progresoTransferencia"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginTop="6dp" />
+
+            <TextView
+                android:id="@+id/faltanTransferencia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/texto_suave"
+                android:textIsSelectable="true"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/botonPedirFaltan"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="@string/pedir_faltan"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
         <TextView
             android:id="@+id/estado"
             android:layout_width="match_parent"
@@ -155,17 +251,22 @@
                 android:textAllCaps="false" />
         </LinearLayout>
 
-        <TextView
+        <LinearLayout
             android:id="@+id/historial"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/tarjeta"
-            android:lineSpacingExtra="4dp"
             android:minHeight="120dp"
-            android:padding="12dp"
-            android:text="@string/sin_mensajes"
-            android:textColor="@color/texto"
-            android:textIsSelectable="true"
-            android:textSize="16sp" />
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/sinMensajes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sin_mensajes"
+                android:textColor="@color/texto_suave"
+                android:textSize="16sp" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

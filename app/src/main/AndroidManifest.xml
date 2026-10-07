@@ -4,6 +4,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <uses-feature android:name="android.hardware.microphone" android:required="false" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
     <uses-feature android:name="android.hardware.audio.output" android:required="false" />
 
     <application
@@ -23,6 +24,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".EnviarImagenActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Solo para la foto temporal de la cámara (no se piden permisos de cámara ni de almacenamiento) -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.archivos"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/rutas_compartidas" />
+        </provider>
     </application>
 
 </manifest>

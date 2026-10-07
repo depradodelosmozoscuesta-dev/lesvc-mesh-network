@@ -11,12 +11,22 @@ namespace {
 std::mutex g_mutex;           // ggwave keeps a global instance table + global protocol flags
 bool g_protocolsConfigured = false;
 
-// Only audible + ultrasound protocols are offered in the app. Disabling the
-// rest for RX reduces false positives (as recommended in ggwave.h).
+// Only audible + ultrasound protocols are offered in the app (+ the experimental
+// LESVC "Turbo" custom protocol). Disabling the rest for RX reduces false
+// positives (as recommended in ggwave.h).
+//
+// Turbo (v0.3, experimental, short range): same band start as the audible modes
+// (bin 40 ≈ 1.9 kHz), 4 bytes per Tx (8 tones → up to ≈7.9 kHz) and 2 frames per
+// Tx instead of 3 → ≈1.76× the throughput of "fastest". Evaluated in
+// tools/turbo/turbo_eval.cpp (noise + room echo + clock drift).
+constexpr int kTurboProtocol = GGWAVE_PROTOCOL_CUSTOM_0;
 void configureProtocolsLocked() {
     if (g_protocolsConfigured) return;
+    const GGWave::Protocol turbo = { "[LESVC] Turbo", 40, 2, 4, 1, true };
+    GGWave::Protocols::tx()[kTurboProtocol] = turbo;
+    GGWave::Protocols::rx()[kTurboProtocol] = turbo;
     for (int p = 0; p < GGWAVE_PROTOCOL_COUNT; ++p) {
-        const bool on = p <= GGWAVE_PROTOCOL_ULTRASOUND_FASTEST;
+        const bool on = p <= GGWAVE_PROTOCOL_ULTRASOUND_FASTEST || p == kTurboProtocol;
         ggwave_rxToggleProtocol((ggwave_ProtocolId) p, on ? 1 : 0);
         ggwave_txToggleProtocol((ggwave_ProtocolId) p, on ? 1 : 0);
     }

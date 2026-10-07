@@ -12,8 +12,8 @@ android {
         applicationId "com.lesvc.mesh"
         minSdk 21
         targetSdk 34
-        versionCode 2
-        versionName "0.2"
+        versionCode 3
+        versionName "0.3"
 
         ndk {
             abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86_64'
@@ -56,6 +56,7 @@ android {
             dependsOn 'buildHostJni'
             systemProperty 'java.library.path', file("$buildDir/host-jni").absolutePath
             systemProperty 'tabla.salida', file("$buildDir/reports/ggwave-roundtrip.md").absolutePath
+            systemProperty 'muestras.salida', (System.getenv("LESVC_MUESTRAS") ?: "$buildDir/lesvc-img-samples")
             testLogging {
                 events "passed", "failed"
                 showStandardStreams = true
@@ -78,5 +79,7 @@ tasks.register('buildHostJni', Exec) {
 dependencies {
     implementation "androidx.core:core-ktx:1.12.0"
     implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "androidx.activity:activity-ktx:1.8.2"        // selector de fotos (Photo Picker) sin permisos
+    implementation "androidx.exifinterface:exifinterface:1.3.7"  // girar las fotos según la cámara
     testImplementation "junit:junit:4.13.2"
 }

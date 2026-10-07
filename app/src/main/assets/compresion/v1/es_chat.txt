@@ -1,0 +1,141 @@
+Hola, ¿qué tal?
+Hola! Todo bien, ¿y tú?
+Buenos días, ¿cómo estás?
+Buenas tardes a todos.
+Buenas noches, hasta mañana.
+Estoy llegando, en cinco minutos estoy ahí.
+Llego tarde, me he quedado sin batería.
+¿Dónde estás?
+Estoy en casa, ¿quieres venir?
+Nos vemos a las 8 en la plaza.
+Quedamos mañana a las 10:30 en la puerta del ayuntamiento.
+Vale, perfecto. Hasta luego.
+Ok, ahora te llamo.
+No puedo hablar ahora, te escribo luego.
+¿Me puedes llamar cuando puedas?
+Gracias por todo, de verdad.
+De nada, para eso estamos.
+¿Has comido ya?
+Sí, ya he comido. ¿Y tú?
+Voy a comprar pan, ¿necesitas algo?
+Trae leche y huevos, por favor.
+Se ha ido la luz en todo el pueblo.
+No hay cobertura en la sierra.
+La carretera está cortada por la nieve.
+Hay mucha niebla, conduce con cuidado.
+Estamos bien, no te preocupes.
+¿Necesitáis ayuda?
+Mandad a alguien al refugio, tenemos un herido leve.
+Prueba de transmisión, uno, dos, tres.
+Recibido, te escucho alto y claro.
+Cambio y corto.
+Repite el mensaje, por favor, no te he entendido.
+Mensaje recibido correctamente.
+La reunión es el jueves a las siete de la tarde.
+El sábado hay mercado en la plaza mayor.
+¿Vienes a la cena del viernes?
+Feliz cumpleaños! Que pases un día estupendo.
+Felicidades, guapa!
+Te quiero mucho.
+Un abrazo muy fuerte.
+Besos a todos.
+¿Qué hora es?
+Son las tres y media.
+Mañana va a llover, coge el paraguas.
+Hace un frío que pela.
+Qué calor hace hoy.
+El autobús sale a las 7:15 desde la estación.
+He perdido el tren, cojo el siguiente.
+¿A qué hora abre la farmacia?
+La farmacia de guardia está en la calle Mayor, número 12.
+El médico viene a las doce.
+Mi madre está mejor, gracias por preguntar.
+¿Me pasas la dirección?
+Calle de la Iglesia 5, segundo izquierda.
+Avenida de Castilla, 23, bajo.
+Mi número es el 612 345 678.
+Te mando la ubicación ahora.
+Ya estoy aquí, abre la puerta.
+No encuentro las llaves.
+¿Has visto mi cartera?
+Me he dejado el móvil en el coche.
+Tengo que colgar, hablamos luego.
+Perfecto, muchas gracias.
+Vale, sin problema.
+Claro que sí.
+Por supuesto.
+No sé, ya veremos.
+A lo mejor voy más tarde.
+Depende del tiempo que haga.
+Si llueve no vamos.
+Avísame cuando llegues.
+He llegado bien.
+Ya estamos en casa.
+El partido empieza a las nueve.
+¿Quién ha ganado?
+Hemos ganado dos a uno.
+La antena del cerro necesita revisión.
+Llevad cable coaxial y conectores.
+La batería del repetidor está baja.
+El generador funciona correctamente.
+Revisad la frecuencia de emergencia.
+Estamos transmitiendo desde el puesto de control.
+Todo en orden por aquí.
+Sin novedad en el frente.
+Necesito agua y comida para tres personas.
+Hay que evacuar la zona norte.
+El río ha crecido mucho esta noche.
+Los bomberos ya están avisados.
+La ambulancia tarda unos veinte minutos.
+Estoy bien, solo un poco cansado.
+Mañana te cuento todo.
+Lo siento mucho.
+Enhorabuena por el trabajo.
+¿Cuánto cuesta?
+Son veinte euros con cincuenta.
+Te hago un bizum luego.
+¿Me prestas el coche el domingo?
+El lunes no hay clase.
+Los niños ya están dormidos.
+¿Qué quieres cenar?
+Hay tortilla y ensalada.
+Pon la mesa, que ya está la comida.
+Voy de camino.
+Estoy en el trabajo, salgo a las seis.
+Hoy salgo antes, sobre las cinco.
+¿Te viene bien el martes?
+Mejor el miércoles por la mañana.
+Hecho, el miércoles a las once.
+No me olvides traer el cargador.
+Se me ha roto la pantalla del móvil.
+La radio funciona perfectamente.
+Te escucho con mucho ruido.
+Acércate un poco más.
+Sube el volumen, por favor.
+Baja la música, que no te oigo.
+Esta es una prueba del sistema de mensajes por sonido.
+Si recibes esto, contesta con un ok.
+OK, recibido.
+Sí.
+No.
+Gracias.
+Hasta mañana.
+¿Todo bien por ahí?
+Sí, todo bien, gracias a Dios.
+Han cortado el agua hasta las dos.
+El pan se ha acabado, compra más.
+Ve a recoger a los niños al colegio.
+La abuela pregunta por ti.
+Llama a tu padre, que está preocupado.
+Estamos en el bar de la esquina.
+Pide una caña para mí.
+Ya he pagado yo.
+Mañana es fiesta en el pueblo.
+Las fiestas empiezan el día 15 de agosto.
+El concierto es a las diez y media de la noche.
+Necesito que me ayudes con la mudanza.
+¿Tienes un rato esta tarde?
+Ahora mismo voy.
+Dame diez minutos.
+Espérame en la entrada.
+Ten cuidado con el perro.

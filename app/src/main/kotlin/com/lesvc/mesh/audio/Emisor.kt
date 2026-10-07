@@ -19,7 +19,7 @@ class Emisor {
     fun emitir(cargas: List<ByteArray>, protocolo: Protocolo, volumen: Int, alEmpezarParte: (Int, Int) -> Unit = { _, _ -> }): Boolean {
         cancelado = false
         val rate = GGWave.SAMPLE_RATE_TX
-        val ondas = cargas.map { ggwave.encode(it, protocolo, volumen) }
+        // Se codifica cada parte justo antes de emitirla (una imagen puede tener ~100 partes).
         val pausa = ShortArray(rate * 4 / 10) // 0,4 s de silencio entre partes
 
         val minBuf = AudioTrack.getMinBufferSize(rate, AudioFormat.CHANNEL_OUT_MONO, AudioFormat.ENCODING_PCM_16BIT)
@@ -41,11 +41,12 @@ class Emisor {
             check(track.state == AudioTrack.STATE_INITIALIZED) { "No se pudo abrir el altavoz" }
             track.play()
             var escritas = 0L
-            for ((i, onda) in ondas.withIndex()) {
+            for ((i, carga) in cargas.withIndex()) {
                 if (cancelado) break
-                alEmpezarParte(i + 1, ondas.size)
+                val onda = ggwave.encode(carga, protocolo, volumen)
+                alEmpezarParte(i + 1, cargas.size)
                 escritas += escribir(track, onda)
-                if (i < ondas.lastIndex) escritas += escribir(track, pausa)
+                if (i < cargas.lastIndex) escritas += escribir(track, pausa)
             }
             if (cancelado) {
                 track.pause(); track.flush()

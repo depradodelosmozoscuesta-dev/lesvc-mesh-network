@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/img_explicacion"
+            android:textColor="@color/texto_suave"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/botonGaleria"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="@string/img_galeria"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/botonCamara"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="@string/img_camara"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/opciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/tarjeta"
+            android:orientation="vertical"
+            android:padding="14dp"
+            android:visibility="gone">
+
+            <TextView style="@style/Etiqueta" android:layout_marginTop="0dp" android:text="@string/img_tipo" />
+
+            <RadioGroup
+                android:id="@+id/grupoPreset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/presetFoto"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/img_foto" />
+
+                <RadioButton
+                    android:id="@+id/presetGrafico"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="@string/img_grafico" />
+            </RadioGroup>
+
+            <TextView style="@style/Etiqueta" android:text="@string/img_tiempo" />
+
+            <Spinner
+                android:id="@+id/selectorTiempo"
+                android:layout_width="match_parent"
+                android:layout_height="52dp" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/interruptorGris"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/img_gris" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/interruptorRepetir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="@string/img_repetir" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tituloVista"
+            style="@style/Etiqueta"
+            android:text="@string/img_asi_llegara"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/vistaPrevia"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:adjustViewBounds="true"
+            android:background="#E0E4EA"
+            android:contentDescription="@string/img_asi_llegara"
+            android:scaleType="fitCenter"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/detalle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/texto"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/botonEnviarImagen"
+            style="@style/BotonGrande"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/enviar"
+            android:enabled="false"
+            android:text="@string/img_enviar" />
+    </LinearLayout>
+</ScrollView>

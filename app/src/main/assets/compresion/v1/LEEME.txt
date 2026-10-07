@@ -1,0 +1,10 @@
+Diccionario de compresión v1 (LESVC Mesh Audio). NO MODIFICAR: emisor y receptor
+deben tener exactamente los mismos ficheros para el mismo identificador (0x11/0x12).
+Cualquier cambio requiere crear compresion/v2 y nuevos identificadores.
+
+es_libros.txt  Extractos de dominio público (Project Gutenberg, sin cabeceras ni licencia PG):
+               Miguel de Unamuno, "Niebla" (1914, ebook #49836); Benito Pérez Galdós,
+               "Marianela" (1878, #17340); Vicente Blasco Ibáñez, "Los cuatro jinetes del
+               Apocalipsis" (1916, #24536).
+es_chat.txt    Frases cortas de estilo mensajería escritas para este proyecto.
+urls.txt       Lista de URLs típicas escritas para este proyecto.

@@ -61,6 +61,17 @@ object Troceador {
         }
     }
 
+    /** Trocea bytes arbitrarios (p. ej. texto comprimido) con la misma cabecera 0x1E. */
+    fun cargasBytes(datos: ByteArray, id: String = nuevoId()): List<ByteArray> {
+        require(datos.isNotEmpty())
+        val n = (datos.size + MAX_TROZO - 1) / MAX_TROZO
+        require(n <= MAX_PARTES) { "Mensaje demasiado largo: $n partes (máx. $MAX_PARTES)" }
+        return (0 until n).map { idx ->
+            val trozo = datos.copyOfRange(idx * MAX_TROZO, minOf(datos.size, (idx + 1) * MAX_TROZO))
+            byteArrayOf(MARCA, id[0].code.toByte(), id[1].code.toByte(), B36[idx].code.toByte(), B36[n - 1].code.toByte()) + trozo
+        }
+    }
+
     fun nuevoId(): String = "" + B36[Random.nextInt(36)] + B36[Random.nextInt(36)]
 
     internal fun b36(c: Byte): Int = B36.indexOf(c.toInt().toChar())
@@ -70,7 +81,9 @@ object Troceador {
 class Reensamblador(private val caducidadMs: Long = 120_000) {
 
     sealed class Resultado {
-        class Completo(val texto: String, val partes: Int) : Resultado()
+        class Completo(val datos: ByteArray, val partes: Int) : Resultado() {
+            val texto: String get() = String(datos, Charsets.UTF_8)
+        }
         class Parcial(val id: String, val recibidas: Int, val total: Int) : Resultado()
         object Invalido : Resultado()
     }
@@ -86,7 +99,7 @@ class Reensamblador(private val caducidadMs: Long = 120_000) {
         pendientes.entries.removeAll { ahoraMs - it.value.ultimo > caducidadMs }
         if (carga.isEmpty()) return Resultado.Invalido
         if (carga[0] != Troceador.MARCA || carga.size < Troceador.CABECERA) {
-            return Resultado.Completo(String(carga, Charsets.UTF_8), 1)
+            return Resultado.Completo(carga, 1)
         }
         val id = String(byteArrayOf(carga[1], carga[2]), Charsets.US_ASCII)
         val idx = Troceador.b36(carga[3])
@@ -99,6 +112,6 @@ class Reensamblador(private val caducidadMs: Long = 120_000) {
         pendientes.remove(id)
         val todo = java.io.ByteArrayOutputStream()
         p.partes.forEach { todo.write(it!!) }
-        return Resultado.Completo(String(todo.toByteArray(), Charsets.UTF_8), total)
+        return Resultado.Completo(todo.toByteArray(), total)
     }
 }

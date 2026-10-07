@@ -1,0 +1,8 @@
+Itziar dice que mañana no puede ir a Valdemorillo porque tiene turno en el hospital. Si Itziar no va, yo tampoco voy a Valdemorillo, así que lo dejamos para el sábado y se lo decimos a Begoña y a Txema.
+Recordad que la reunión de la asociación es el jueves a las 19:30 en el local de la calle Fuencarral. Llevad el acta de la reunión anterior; Fuencarral está cortada por obras, entrad por la calle Hortaleza.
+He hablado con Maite sobre el presupuesto del Mesh: Maite cree que con 300 euros llegamos para los repetidores LoRa, y que los repetidores LoRa del tejado del polideportivo ya funcionan.
+Ojo con el router de Ubiquiti, el Ubiquiti nuevo no arranca si no le pones la configuración de fábrica. Xabi tiene la configuración de fábrica guardada; pídesela a Xabi antes de tocar nada.
+Mañana salimos desde Cercedilla hacia Navacerrada a las 8. Si llueve en Navacerrada, volvemos a Cercedilla y comemos en el bar de Anselmo. Anselmo nos guarda mesa si le avisamos antes de las 12.
+Para el taller de radio necesitamos tres Baofeng, dos antenas Diamond y el analizador. Las Baofeng las trae Rocío y las antenas Diamond las tengo yo. Rocío llega tarde, empezad sin ella.
+Gorka, el código del portal es 4512 y el del trastero 7781. Gorka, no se lo pases a nadie más, que el administrador del edificio ya se quejó del trastero la semana pasada.
+Mensaje para Ainhoa y Sergio: el tren a Zaragoza sale de Atocha a las 9:05, andén 12. Ainhoa tiene los billetes de Zaragoza en el móvil; Sergio, si llegas tarde a Atocha, llama a Ainhoa.
