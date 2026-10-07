@@ -1,0 +1,5 @@
+ggwave vendored (unmodified) from https://github.com/ggerganov/ggwave
+tag:    ggwave-v0.4.3
+commit: a38e38b7373f9adf45baf737a104206664b225a1
+files:  src/ggwave.cpp, src/fft.h, src/reed-solomon/*, include/ggwave/ggwave.h, LICENSE
+license: MIT (c) 2020 Georgi Gerganov; reed-solomon: MIT (c) 2015 Mike Lubinets

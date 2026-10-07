@@ -14,7 +14,7 @@ object SonicAudioEncoderStereo {
         val channelL = mutableListOf<Short>()
         val channelR = mutableListOf<Short>()
 
-        for (char in text) {
+        for (char in text.uppercase()) {
             val unit = SonicDictionaryStereo.symbols[char]
             if (unit != null) {
                 val samplesL = generateTone(unit.note, unit.durationMsL, unit.amplitudeL, unit.repeatsL)

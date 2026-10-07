@@ -57,9 +57,9 @@ object SonicAudioDecoderStereo {
         for ((char, unit) in SonicDictionaryStereo.symbols) {
             if (unit.note != dominantNote) continue
 
-            val score = abs(unit.durationMsL - durationMs) +
+            val score = (abs(unit.durationMsL - durationMs) +
                     abs((unit.amplitudeL - amplitudePeak) * 1000) +
-                    abs(unit.repeatsL - repeats) * 10
+                    abs(unit.repeatsL - repeats) * 10).toDouble()
 
             if (score < bestScore) {
                 bestScore = score
@@ -139,7 +139,7 @@ object SonicAudioDecoderStereo {
     private fun detectAmplitude(frame: ShortArray): Float {
         var maxAmp = 0
         for (sample in frame) {
-            val amp = abs(sample)
+            val amp = abs(sample.toInt())
             if (amp > maxAmp) maxAmp = amp
         }
         return maxAmp / 32768f
