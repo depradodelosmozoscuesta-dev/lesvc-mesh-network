@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recordButton: Button
     private lateinit var clearButton: Button
 
-    private var isRecording = false
+    @Volatile private var isRecording = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -93,6 +93,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startRecording() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
+            != PackageManager.PERMISSION_GRANTED
+        ) {
+            statusText.text = "Falta permiso de micrófono"
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECORD_AUDIO), 1001)
+            return
+        }
         isRecording = true
         recordButton.text = "Detener grabación"
         statusText.text = "Grabando..."
@@ -130,6 +137,8 @@ class MainActivity : AppCompatActivity() {
 
                 recorder.stop()
                 recorder.release()
+                isRecording = false
+                recordButton.post { recordButton.text = "⏺ Grabar" }
 
                 val samplesL = mutableListOf<Short>()
                 val samplesR = mutableListOf<Short>()
@@ -150,6 +159,8 @@ class MainActivity : AppCompatActivity() {
                 statusText.post { statusText.text = "Decodificado exitosamente" }
 
             } catch (e: Exception) {
+                isRecording = false
+                recordButton.post { recordButton.text = "⏺ Grabar" }
                 statusText.post { statusText.text = "Error: ${e.message}" }
             }
         }
@@ -157,7 +168,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun stopRecording() {
         isRecording = false
-        recordButton.text = "Grabar"
+        recordButton.text = "⏺ Grabar"
         statusText.text = "Grabación detenida"
     }
 
