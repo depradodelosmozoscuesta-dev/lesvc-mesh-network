@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Audio Messaging Estéreo"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#1976D2"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Codificación Sónica: 14 características por unidad"
+        android:textSize="12sp"
+        android:textColor="#666666"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/inputText"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:hint="Ingresa texto a codificar"
+        android:inputType="text"
+        android:padding="12dp"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/playButton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="▶ Reproducir"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#4CAF50" />
+
+        <Button
+            android:id="@+id/recordButton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="⏺ Grabar"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#F44336" />
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="✕ Limpiar"
+            android:backgroundTint="#9E9E9E" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estado: listo"
+        android:textStyle="italic"
+        android:textSize="14sp"
+        android:textColor="#1976D2"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp"
+        android:background="#E3F2FD" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Canal Izquierdo (L):"
+                android:textStyle="bold"
+                android:textColor="#0066CC"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/outputTextL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="(esperando grabación)"
+                android:textColor="#0066CC"
+                android:padding="8dp"
+                android:background="#E3F2FD"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Canal Derecho (R):"
+                android:textStyle="bold"
+                android:textColor="#CC0000"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/outputTextR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="(esperando grabación)"
+                android:textColor="#CC0000"
+                android:padding="8dp"
+                android:background="#FFEBEE" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
