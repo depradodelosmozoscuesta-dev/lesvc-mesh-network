@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primario">#0D47A1</color>
+    <color name="primario_oscuro">#002171</color>
+    <color name="acento">#00897B</color>
+    <color name="enviar">#2E7D32</color>
+    <color name="escuchar">#1565C0</color>
+    <color name="detener">#C62828</color>
+    <color name="fondo">#F4F6F9</color>
+    <color name="tarjeta">#FFFFFF</color>
+    <color name="texto">#1B1F24</color>
+    <color name="texto_suave">#5F6B7A</color>
+    <color name="aviso">#B26A00</color>
+</resources>
