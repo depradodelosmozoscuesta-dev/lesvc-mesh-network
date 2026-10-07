@@ -1,171 +1,230 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/scroll"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#0a0e27">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🎧 Audio Messaging"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#00d4ff" />
+
+        <TextView
+            android:id="@+id/balanceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="💰 100 créditos"
+            android:textSize="14sp"
+            android:textColor="#00ff88"
+            android:padding="8dp"
+            android:background="#1a2a4a"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Status Bar -->
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="✅ Listo"
+        android:textSize="12sp"
+        android:textColor="#00ff88"
+        android:padding="8dp"
+        android:background="#1a2a1a"
+        android:layout_marginBottom="16dp"
+        android:textStyle="italic" />
+
+    <!-- Input Section -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📝 Ingresa texto:"
+        android:textSize="14sp"
+        android:textColor="#00d4ff"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/textInput"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="Escribe texto aquí (A-Z, 0-9, . , ! ?)..."
+        android:textColor="#ffffff"
+        android:textColorHint="#666666"
+        android:background="#1a2a4a"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"
+        android:textSize="14sp"
+        android:gravity="top"
+        android:inputType="textMultiLine" />
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:spacing="8dp"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/btnEncode"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="▶ Reproducir"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:background="#00a86b"
+            android:textColor="#ffffff"
+            android:cornerRadius="8dp" />
+
+        <Button
+            android:id="@+id/btnDecode"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="⏺ Grabar"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:background="#ff6b00"
+            android:textColor="#ffffff"
+            android:cornerRadius="8dp" />
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="✕ Limpiar"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:background="#cc0000"
+            android:textColor="#ffffff"
+            android:cornerRadius="8dp" />
+    </LinearLayout>
+
+    <!-- Output Section -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🎧 Decodificación:"
+        android:textSize="14sp"
+        android:textColor="#00d4ff"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:background="#1a2a4a"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp">
 
         <TextView
+            android:id="@+id/textOutputL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/subtitulo"
-            android:textColor="@color/texto_suave"
-            android:textSize="14sp" />
-
-        <!-- ENVIAR -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/tarjeta"
-            android:orientation="vertical"
-            android:padding="14dp">
-
-            <EditText
-                android:id="@+id/textoMensaje"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="top|start"
-                android:hint="@string/hint_mensaje"
-                android:importantForAutofill="no"
-                android:inputType="textMultiLine|textCapSentences"
-                android:maxLines="6"
-                android:minLines="3"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/contador"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:textColor="@color/texto_suave"
-                android:textSize="13sp" />
-
-            <TextView style="@style/Etiqueta" android:text="@string/modo" />
-
-            <Spinner
-                android:id="@+id/selectorProtocolo"
-                android:layout_width="match_parent"
-                android:layout_height="52dp" />
-
-            <TextView
-                android:id="@+id/avisoUltra"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/aviso_ultra"
-                android:textColor="@color/aviso"
-                android:textSize="13sp"
-                android:visibility="gone" />
-
-            <TextView
-                android:id="@+id/etiquetaVolumen"
-                style="@style/Etiqueta" />
-
-            <SeekBar
-                android:id="@+id/volumen"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:max="99" />
-
-            <Button
-                android:id="@+id/botonEnviar"
-                style="@style/BotonGrande"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@color/enviar"
-                android:text="@string/enviar" />
-        </LinearLayout>
-
-        <!-- ESCUCHAR -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/tarjeta"
-            android:orientation="vertical"
-            android:padding="14dp">
-
-            <Button
-                android:id="@+id/botonEscuchar"
-                style="@style/BotonGrande"
-                android:backgroundTint="@color/escuchar"
-                android:text="@string/escuchar" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/nivel_micro"
-                android:textColor="@color/texto_suave"
-                android:textSize="13sp" />
-
-            <ProgressBar
-                android:id="@+id/nivelMicro"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="12dp"
-                android:max="100" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/oirme"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:minHeight="48dp"
-                android:text="@string/oirme"
-                android:textSize="14sp" />
-        </LinearLayout>
+            android:text="L: ---"
+            android:textSize="12sp"
+            android:textColor="#00ff88"
+            android:layout_marginBottom="8dp"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/estado"
+            android:id="@+id/textOutputR"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="#E3F2FD"
-            android:padding="10dp"
-            android:textColor="@color/primario"
-            android:textSize="15sp" />
-
-        <!-- MENSAJES -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/Etiqueta"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:text="@string/mensajes"
-                android:textSize="17sp" />
-
-            <Button
-                android:id="@+id/botonLimpiar"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:text="@string/limpiar"
-                android:textAllCaps="false" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/historial"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/tarjeta"
-            android:lineSpacingExtra="4dp"
-            android:minHeight="120dp"
-            android:padding="12dp"
-            android:text="@string/sin_mensajes"
-            android:textColor="@color/texto"
-            android:textIsSelectable="true"
-            android:textSize="16sp" />
+            android:text="R: ---"
+            android:textSize="12sp"
+            android:textColor="#ff00ff"
+            android:textStyle="bold" />
     </LinearLayout>
-</ScrollView>
+
+    <!-- Credits Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:spacing="8dp">
+
+        <Button
+            android:id="@+id/btnCredits"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="💳 Créditos"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:background="#4a00a8"
+            android:textColor="#ffffff"
+            android:cornerRadius="8dp" />
+
+        <Button
+            android:id="@+id/btnDaily"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:text="🎁 Bonus Diario"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:background="#ffaa00"
+            android:textColor="#ffffff"
+            android:cornerRadius="8dp" />
+    </LinearLayout>
+
+    <!-- Info Footer -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:padding="12dp"
+        android:background="#1a2a4a">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📊 COSTOS:"
+            android:textSize="11sp"
+            android:textColor="#00d4ff"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• Codificar: 5 créditos"
+            android:textSize="10sp"
+            android:textColor="#cccccc" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• Decodificar: 3 créditos"
+            android:textSize="10sp"
+            android:textColor="#cccccc" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="• Bonus diario: 10 créditos"
+            android:textSize="10sp"
+            android:textColor="#cccccc" />
+    </LinearLayout>
+
+</LinearLayout>
